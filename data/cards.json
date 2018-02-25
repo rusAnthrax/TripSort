@@ -1,0 +1,31 @@
+[
+  {
+    "origin": "Stockholm",
+    "destination": "New York",
+    "transport": "plane",
+    "transport_route": "SK22",
+    "seat": "7B",
+    "gate": "22"
+  },
+  {
+    "origin": "Madrid",
+    "destination": "Barcelona",
+    "transport": "train",
+    "transport_route": "78A",
+    "seat": "45B"
+  },
+  {
+    "origin": "Gerona Airport",
+    "destination": "Stockholm",
+    "transport": "plane",
+    "transport_route": "SK455",
+    "seat": "3A",
+    "gate": "45B",
+    "baggage": "334"
+  },
+  {
+    "origin": "Barcelona",
+    "destination": "Gerona Airport",
+    "transport": "bus"
+  }
+]
