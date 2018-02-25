@@ -12,13 +12,15 @@ use App\Transport\TransportFactory;
 class TripFacade
 {
     /**
-     * @param  array $cardsArray
+     * Builds a trip from an array of unsorted boarding cards
+     *
+     * @param  array $cardsArray unsorted array of boarding cards
      *
      * @return array
      *
      * @throws Exception\TransportTypeInvalid
      */
-    public function newRandomJourneys(array $cardsArray): array
+    public function BuildTrip(array $cardsArray): array
     {
         $tripSorter = new TripSort($cardsArray);
         $sortedTrip = $tripSorter->sort();
@@ -26,11 +28,9 @@ class TripFacade
         $directions = [];
 
         foreach ($sortedTrip as $index => $card) {
-            echo $index + 1 . '. ' . TransportFactory::createTransport($card['transport'])->getMsg($card) . PHP_EOL;
-            if ($index == count($sortedTrip) - 1) {
-                $directions[] = $index + 2 . '. ' . 'You have arrived at your final destination.' . PHP_EOL;
-            }
+            $directions[] = $index + 1 . '. ' . TransportFactory::createTransport($card['transport'])->getMsg($card);
         }
+        $directions[] = (count($sortedTrip) + 1) . '. ' . 'You have arrived at your final destination.';
 
         return $directions;
     }

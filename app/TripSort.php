@@ -18,13 +18,18 @@ class TripSort
     private $cardsArray = [];
 
 
+    /**
+     * TripSort constructor.
+     *
+     * @param array $cardsArray unsorted array of boarding cards
+     */
     public function __construct(array $cardsArray)
     {
         $this->cardsArray = $cardsArray;
     }
 
     /**
-     * Sort a trip array
+     * Sort a card array into a trip
      *
      * @return array
      */
@@ -79,7 +84,7 @@ class TripSort
     }
 
     /**
-     * Sorting legs
+     * Sorting cards
      */
     private function sortCards()
     {

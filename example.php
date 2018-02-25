@@ -13,10 +13,10 @@ $json_data = json_decode($json, true);
 
 $facadeTrip = new TripFacade();
 try {
-    $completeJourney = $facadeTrip->newRandomJourneys($json_data);
+    $completeJourney = $facadeTrip->BuildTrip($json_data);
 } catch (TransportTypeInvalid $exception) {
     echo $exception->getMessage();
     die();
 }
 
-echo implode("\n", $completeJourney);
+echo implode(PHP_EOL, $completeJourney) . PHP_EOL;
